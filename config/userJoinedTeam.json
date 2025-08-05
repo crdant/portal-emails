@@ -1,0 +1,28 @@
+{
+  "id": "userJoinedTeam",
+  "name": "User Joined Team",
+  "subject": "🎉 Welcome to {{app_name}} - You're All Set!",
+  "preview_text": "Welcome to the team - you're all set up and ready to go",
+  "fromAddress": "SlackerNews Customer Success <contact@replicated.com>",
+  
+  "header_color": "#4A90E2",
+  "accent_color": "#5CB85C",
+  "button_color": "#4A90E2",
+  "highlight_bg_color": "#F0F8FF",
+  
+  "badge_text": "You're All Set!",
+  "header_emoji": "🎉",
+  "main_title": "Welcome to the Team!",
+  
+  "content_icon": "✅",
+  "highlight_title": "Successfully joined {{customer_name}}",
+  "highlight_description": "You can now log in with this email address at:",
+  "button_text": "Access Your Portal 🚀",
+  "action_url": "{{login_url}}",
+  
+  "signature_text": "Welcome to the team!",
+  
+  "app_name": "{{app_name}}",
+  "customer_name": "{{customer_name}}",
+  "login_url": "{{login_url}}"
+}

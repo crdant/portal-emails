@@ -1,0 +1,29 @@
+{
+  "id": "userInvitation",
+  "name": "User Invitation",
+  "subject": "Welcome to {{app_name}} - You're Invited!",
+  "preview_text": "You've been invited to join the team",
+  "fromAddress": "SlackerNews Customer Success <contact@replicated.com>",
+  
+  "header_color": "#4A90E2",
+  "accent_color": "#5CB85C",
+  "button_color": "#4A90E2",
+  "highlight_bg_color": "#F0F8FF",
+  
+  "badge_text": "You're Invited!",
+  "header_emoji": "🎉",
+  "main_title": "Welcome to the Team!",
+  
+  "content_icon": "🚀",
+  "highlight_title": "Your {{app_name}} Enterprise Portal access is ready",
+  "highlight_description": "Ready to get started?",
+  "button_text": "Activate Your Account 🚀",
+  "action_url": "{{invite_url}}",
+  
+  "additional_content": "Need help? Contact us at <a href=\"mailto:support@{{app_domain}}\">support@{{app_domain}}</a><br>If you didn't expect this invitation, you can safely ignore this email.",
+  "signature_text": "Welcome aboard,",
+  
+  "app_name": "{{app_name}}",
+  "app_domain": "{{app_domain}}",
+  "invite_url": "{{invite_url}}"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "temporaryLoginLink",
+  "name": "Temporary Login Link",
+  "subject": "Complete your login to {{app_name}}",
+  "preview_text": "Your login link is ready - click to continue",
+  "fromAddress": "SlackerNews Customer Success <contact@replicated.com>",
+  
+  "header_color": "#4A90E2",
+  "accent_color": "#5CB85C",
+  "button_color": "#4A90E2",
+  "highlight_bg_color": "#F0F8FF",
+  
+  "badge_text": "Ready to Log In",
+  "header_emoji": "🔓",
+  "main_title": "You're Ready to Log In!",
+  
+  "content_icon": "{{verification_code}}",
+  "highlight_title": "Sign into your {{app_name}} account",
+  "highlight_description": "You can now log in with this code",
+  "button_text": "Access Directly 🚀",
+  "action_url": "{{login_url}}",
+  
+  "signature_text": "",
+  "app_name": "{{app_name}}",
+  "customer_name": "{{customer_name}}",
+  "login_url": "{{login_url}}"
+}
