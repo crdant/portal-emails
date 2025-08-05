@@ -4,7 +4,7 @@
     <mj-preview>{{preview_text}}</mj-preview>
     <mj-attributes>
       <mj-all font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" />
-      <mj-section background-color="#F8F9FA" padding="0" />
+      <mj-section background-color="#F7FAFC" padding="0" />
       <mj-column padding="0" />
     </mj-attributes>
     <mj-style inline="inline">
@@ -16,7 +16,7 @@
       }
       
       body {
-        background-color: #F8F9FA !important;
+        background-color: #F7FAFC !important;
         padding: 40px 0;
         margin: 0;
       }
@@ -50,12 +50,27 @@
         text-align: center !important;
       }
       
+      .logo-image img {
+        max-width: 60px !important;
+        height: 60px !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        margin-right: 16px !important;
+      }
+      
       .logo-text * {
         color: #FFFFFF !important;
-        font-size: 32px !important;
+        font-size: 42px !important;
         font-weight: 700 !important;
         margin-bottom: 8px !important;
         text-decoration: none !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        line-height: 1.2 !important;
+      }
+      
+      .logo-container {
+        text-align: center !important;
       }
       
       .header-emoji * {
@@ -150,6 +165,14 @@
         .header-section {
           padding: 32px 20px !important;
         }
+        .logo-image img {
+          max-width: 48px !important;
+          height: 48px !important;
+          margin-right: 12px !important;
+        }
+        .logo-text * {
+          font-size: 36px !important;
+        }
         .content-highlight {
           padding: 24px 16px !important;
         }
@@ -160,7 +183,7 @@
       }
     </mj-style>
   </mj-head>
-  <mj-body background-color="#F8F9FA" css-class="body-container">
+  <mj-body background-color="#F7FAFC" css-class="body-container">
     <!-- Wrapper container for styling -->
     <mj-wrapper css-class="email-wrapper" background-color="#FFFFFF" border-radius="16px" padding="0">
       <!-- Header Section -->
@@ -169,8 +192,8 @@
           <mj-text css-class="status-badge" align="center">
             {{badge_text}}
           </mj-text>
-          <mj-text css-class="logo-text" align="center">
-            ⚡{{app_name}}
+          <mj-text css-class="logo-container" align="center">
+            {{#if logo_data_url}}<img src="{{logo_data_url}}" alt="{{app_name}} Logo" style="max-width: 60px !important; height: 60px !important; display: inline-block !important; vertical-align: middle !important; margin-right: 16px !important;">{{/if}}<span style="color: #FFFFFF !important; font-size: 42px !important; font-weight: 700 !important; display: inline-block !important; vertical-align: middle !important; line-height: 1.2 !important;">{{#unless logo_data_url}}⚡{{/unless}}{{app_name}}</span>
           </mj-text>
           <mj-text css-class="header-emoji" align="center">
             {{header_emoji}}

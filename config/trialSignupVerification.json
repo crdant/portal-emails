@@ -4,11 +4,11 @@
   "subject": "Verify your email - Start your {{app_name}} trial!",
   "preview_text": "Verify your email to begin your free trial",
   "fromAddress": "SlackerNews Customer Success <contact@replicated.com>",
-  
-  "header_color": "#4A90E2",
-  "accent_color": "#5CB85C",
-  "button_color": "#4A90E2",
-  "highlight_bg_color": "#F0F8FF",
+  "logo_url": "images/slackernews-logo-transparent.png",  
+  "header_color": "#FA8028",
+  "accent_color": "#FA8028",
+  "button_color": "#FA8028",
+  "highlight_bg_color": "#F7FAFC",
   
   "badge_text": "Free Trial",
   "header_emoji": "📧",
@@ -20,11 +20,11 @@
   "button_text": "Verify Email Instantly ✉️",
   "action_url": "{{login_url}}",
   
-  "additional_content": "After verification, you can log in at: <a href=\"{{general_login_url}}\" style=\"color: #FF6B35 !important;\">{{general_login_url}}</a>",
+  "additional_content": "After verification, you can log in at: <a href=\"{{general_login_url}}\" style=\"color: #FA8028 !important;\">{{general_login_url}}</a>",
   "signature_text": "Ready to revolutionize your team's knowledge sharing?",
   
   "app_name": "{{app_name}}",
-  "verification_code": "{{verification_code}}",
+  "logo_data_url": "{{logo_data_url}}",  "verification_code": "{{verification_code}}",
   "login_url": "{{login_url}}",
   "general_login_url": "{{general_login_url}}"
 }

@@ -4,11 +4,11 @@
   "subject": "Welcome to {{app_name}} - You're Invited!",
   "preview_text": "You've been invited to join the team",
   "fromAddress": "SlackerNews Customer Success <contact@replicated.com>",
-  
-  "header_color": "#4A90E2",
-  "accent_color": "#5CB85C",
-  "button_color": "#4A90E2",
-  "highlight_bg_color": "#F0F8FF",
+  "logo_url": "images/slackernews-logo-transparent.png",  
+  "header_color": "#FA8028",
+  "accent_color": "#FA8028",
+  "button_color": "#FA8028",
+  "highlight_bg_color": "rgba(255, 107, 53, 0.05)",
   
   "badge_text": "You're Invited!",
   "header_emoji": "🎉",
@@ -24,6 +24,6 @@
   "signature_text": "Welcome aboard,",
   
   "app_name": "{{app_name}}",
-  "app_domain": "{{app_domain}}",
+  "logo_data_url": "{{logo_data_url}}",  "app_domain": "{{app_domain}}",
   "invite_url": "{{invite_url}}"
 }

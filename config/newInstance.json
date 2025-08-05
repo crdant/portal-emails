@@ -4,11 +4,11 @@
   "subject": "🎉 {{app_name}} Instance {{instance_name}} is Online!",
   "preview_text": "Your new instance is ready and fully operational",
   "fromAddress": "SlackerNews Customer Success <contact@replicated.com>",
-  
-  "header_color": "#4A90E2",
-  "accent_color": "#5CB85C",
-  "button_color": "#4A90E2",
-  "highlight_bg_color": "#F0F8FF",
+  "logo_url": "images/slackernews-logo-transparent.png",  
+  "header_color": "#FA8028",
+  "accent_color": "#38A169",
+  "button_color": "#FA8028",
+  "highlight_bg_color": "#F0FFF4",
   
   "badge_text": "New Instance",
   "header_emoji": "🎉",
@@ -20,10 +20,10 @@
   "button_text": "Open Instance Dashboard 🚀",
   "action_url": "{{instance_url}}",
   
-  "additional_content": "You can view the instance and access update instructions as they become available at: <a href=\"{{instance_url}}\" style=\"color: #FF6B35 !important;\">{{instance_url}}</a>",
+  "additional_content": "You can view the instance and access update instructions as they become available at: <a href=\"{{instance_url}}\" style=\"color: #FA8028 !important;\">{{instance_url}}</a>",
   "signature_text": "Excited to see what you build!",
   
   "app_name": "{{app_name}}",
-  "instance_name": "{{instance_name}}",
+  "logo_data_url": "{{logo_data_url}}",  "instance_name": "{{instance_name}}",
   "instance_url": "{{instance_url}}"
 }

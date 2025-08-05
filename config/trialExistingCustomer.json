@@ -4,11 +4,11 @@
   "subject": "Welcome back to {{app_name}} - You're already set up!",
   "preview_text": "No trial needed - you already have full access",
   "fromAddress": "SlackerNews Customer Success <contact@replicated.com>",
-  
-  "header_color": "#4A90E2",
-  "accent_color": "#5CB85C",
-  "button_color": "#4A90E2",
-  "highlight_bg_color": "#F0F8FF",
+  "logo_url": "images/slackernews-logo-transparent.png",  
+  "header_color": "#FA8028",
+  "accent_color": "#38A169",
+  "button_color": "#FA8028",
+  "highlight_bg_color": "#F0FFF4",
   
   "badge_text": "You Have an Account",
   "header_emoji": "👋",
@@ -23,5 +23,5 @@
   "signature_text": "Happy to have you back!",
   
   "app_name": "{{app_name}}",
-  "login_url": "{{login_url}}"
+  "logo_data_url": "{{logo_data_url}}",  "login_url": "{{login_url}}"
 }
