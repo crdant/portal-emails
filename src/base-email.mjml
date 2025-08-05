@@ -233,7 +233,7 @@
     <mj-section background-color="#FFFFFF" padding="20px 40px 0px">
       <mj-column>
         <mj-text align="center" color="#4A5568">
-          {{additional_content}}
+          {{{additional_content}}}
         </mj-text>
       </mj-column>
     </mj-section>
