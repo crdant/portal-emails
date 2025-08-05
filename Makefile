@@ -28,12 +28,14 @@ clean:
 	@rm -rf $(DIST_DIR) $(TEMPLATES_DIR)
 	@rm -f $(BUILDDIR)/email-templates.json
 
-# Build all templates
-build: $(MJML_FILES) $(CONFIG_FILES) install
+# Build template reosurce
+$(BUILDDIR)/email-templates.json: $(MJML_FILES) $(CONFIG_FILES) install
 	BUILDDIR=$(BUILDDIR) $(NODE) $(BUILD_SCRIPT)
 
+build: $(BUILDDIR)/email-templates.json
+
 # Apply templates to Replicated API
-apply: build $(BUILDDIR)/email-templates.json
+apply: $(BUILDDIR)/email-templates.json
 	@if [ -z "$(REPLICATED_APP)" ]; then \
 		echo "Error: REPLICATED_APP environment variable is required"; \
 		exit 1; \

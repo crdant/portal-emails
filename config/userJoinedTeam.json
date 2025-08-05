@@ -4,11 +4,11 @@
   "subject": "🎉 Welcome to {{app_name}} - You're All Set!",
   "preview_text": "Welcome to the team - you're all set up and ready to go",
   "fromAddress": "SlackerNews Customer Success <contact@replicated.com>",
-  
-  "header_color": "#4A90E2",
-  "accent_color": "#5CB85C",
-  "button_color": "#4A90E2",
-  "highlight_bg_color": "#F0F8FF",
+  "logo_url": "images/slackernews-logo-transparent.png",  
+  "header_color": "#FA8028",
+  "accent_color": "#38A169",
+  "button_color": "#FA8028",
+  "highlight_bg_color": "#F0FFF4",
   
   "badge_text": "You're All Set!",
   "header_emoji": "🎉",
@@ -23,6 +23,6 @@
   "signature_text": "Welcome to the team!",
   
   "app_name": "{{app_name}}",
-  "customer_name": "{{customer_name}}",
+  "logo_data_url": "{{logo_data_url}}",  "customer_name": "{{customer_name}}",
   "login_url": "{{login_url}}"
 }

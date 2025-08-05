@@ -4,11 +4,11 @@
   "subject": "Complete your login to {{app_name}}",
   "preview_text": "Your login link is ready - click to continue",
   "fromAddress": "SlackerNews Customer Success <contact@replicated.com>",
-  
-  "header_color": "#4A90E2",
-  "accent_color": "#5CB85C",
-  "button_color": "#4A90E2",
-  "highlight_bg_color": "#F0F8FF",
+  "logo_url": "images/slackernews-logo-transparent.png",  
+  "header_color": "#FA8028",
+  "accent_color": "#38A169",
+  "button_color": "#FA8028",
+  "highlight_bg_color": "#F0FFF4",
   
   "badge_text": "Ready to Log In",
   "header_emoji": "🔓",
@@ -22,6 +22,6 @@
   
   "signature_text": "",
   "app_name": "{{app_name}}",
-  "customer_name": "{{customer_name}}",
+  "logo_data_url": "{{logo_data_url}}",  "customer_name": "{{customer_name}}",
   "login_url": "{{login_url}}"
 }

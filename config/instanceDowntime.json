@@ -4,11 +4,11 @@
   "subject": "🚨 {{app_name}} Instance Alert - {{instance_name}} Experiencing Issues",
   "preview_text": "Service interruption detected - immediate attention required",
   "fromAddress": "SlackerNews Customer Success <contact@replicated.com>",
-  
-  "header_color": "#D9534F",
-  "accent_color": "#D9534F",
-  "button_color": "#D9534F",
-  "highlight_bg_color": "#F2DEDE",
+  "logo_url": "images/slackernews-logo-transparent.png",  
+  "header_color": "#E53E3E",
+  "accent_color": "#E53E3E",
+  "button_color": "#E53E3E",
+  "highlight_bg_color": "#FFF5F5",
   
   "badge_text": "Service Alert",
   "header_emoji": "🚨",
@@ -24,6 +24,6 @@
   "signature_text": "We're working to resolve this quickly,<br>The {{app_name}} Support Team 🛠️",
   
   "app_name": "{{app_name}}",
-  "instance_name": "{{instance_name}}",
+  "logo_data_url": "{{logo_data_url}}",  "instance_name": "{{instance_name}}",
   "instance_url": "{{instance_url}}"
 }

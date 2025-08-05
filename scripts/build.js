@@ -6,10 +6,13 @@ const mjml = require('mjml');
 const postcss = require('postcss');
 const postcssConfig = require('../postcss.config.js');
 const Handlebars = require('handlebars');
+const https = require('https');
+const http = require('http');
 
 // Directories
 const CONFIG_DIR = path.join(__dirname, '../config');
 const SRC_DIR = path.join(__dirname, '../src');
+const BUILDDIR = process.env.BUILDDIR || path.join(__dirname, '..');
 const DIST_DIR = path.join(__dirname, '../dist');
 const TEMPLATES_DIR = path.join(__dirname, '../templates');
 
@@ -19,11 +22,72 @@ async function ensureDirectories() {
   await fs.mkdir(TEMPLATES_DIR, { recursive: true });
 }
 
-// Load template configuration
+// Convert image URL or file path to data URL
+async function urlToDataUrl(urlOrPath) {
+  // Handle local file paths
+  if (!urlOrPath.startsWith('http')) {
+    const filePath = path.isAbsolute(urlOrPath) ? urlOrPath : path.join(__dirname, '..', urlOrPath);
+    const buffer = await fs.readFile(filePath);
+    const ext = path.extname(filePath).toLowerCase();
+    const mimeType = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.gif': 'image/gif', '.svg': 'image/svg+xml' }[ext] || 'image/png';
+    return `data:${mimeType};base64,${buffer.toString('base64')}`;
+  }
+  
+  // Handle HTTP/HTTPS URLs with redirects
+  return new Promise((resolve, reject) => {
+    const client = urlOrPath.startsWith('https:') ? https : http;
+    
+    const fetchWithRedirect = (url, redirectCount = 0) => {
+      if (redirectCount > 5) {
+        reject(new Error('Too many redirects'));
+        return;
+      }
+      
+      client.get(url, (response) => {
+        // Handle redirects
+        if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
+          fetchWithRedirect(response.headers.location, redirectCount + 1);
+          return;
+        }
+        
+        if (response.statusCode !== 200) {
+          reject(new Error(`HTTP ${response.statusCode}: ${response.statusMessage}`));
+          return;
+        }
+        
+        const chunks = [];
+        response.on('data', (chunk) => chunks.push(chunk));
+        response.on('end', () => {
+          const buffer = Buffer.concat(chunks);
+          const contentType = response.headers['content-type'] || 'image/png';
+          const base64 = buffer.toString('base64');
+          resolve(`data:${contentType};base64,${base64}`);
+        });
+      }).on('error', reject).setTimeout(10000, () => {
+        reject(new Error('Request timeout'));
+      });
+    };
+    
+    fetchWithRedirect(urlOrPath);
+  });
+}
+
+// Load template configuration and process logo
 async function loadTemplateConfig(templateId) {
   const configPath = path.join(CONFIG_DIR, `${templateId}.json`);
   const configContent = await fs.readFile(configPath, 'utf8');
-  return JSON.parse(configContent);
+  const config = JSON.parse(configContent);
+  
+  if (config.logo_url) {
+    try {
+      config.logo_data_url = await urlToDataUrl(config.logo_url);
+    } catch (error) {
+      console.warn(`Failed to load logo for ${templateId}: ${error.message}`);
+      delete config.logo_data_url;
+    }
+  }
+  
+  return config;
 }
 
 // Process CSS with PostCSS
@@ -148,7 +212,7 @@ async function buildAllTemplates() {
     templates: templates.sort((a, b) => a.id.localeCompare(b.id))
   };
   
-  const combinedPath = path.join(__dirname, '../../email-templates.json');
+  const combinedPath = path.join(BUILDDIR, 'email-templates.json');
   // Custom JSON stringify to ensure Unicode escaping for < and >
   const combinedJsonString = JSON.stringify(combinedOutput, null, 2)
     .replace(/</g, '\\u003c')
