@@ -12,7 +12,7 @@
   },
   "keywords": [
     "email",
-    "templates", 
+    "templates",
     "mjml",
     "postcss",
     "slackernews"
@@ -20,16 +20,13 @@
   "author": "SlackerNews Team",
   "license": "MIT",
   "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.2",
+    "handlebars": "^4.7.8",
     "mjml": "^4.14.1",
     "postcss": "^8.4.32",
     "postcss-custom-properties": "^13.3.4",
-    "postcss-nested": "^6.0.1",
-    "autoprefixer": "^10.4.16",
-    "cssnano": "^6.0.2",
-    "handlebars": "^4.7.8"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.2"
+    "postcss-nested": "^6.0.1"
   },
   "engines": {
     "node": ">=16.0.0"
